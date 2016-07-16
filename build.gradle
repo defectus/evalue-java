@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'groovy'
+
+mainClassName = "tk.deftech.evalue.Main"
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
+    testCompile(
+        'junit:junit:4.+',
+        'org.codehaus.groovy:groovy-all:2.4.4',
+        'org.spockframework:spock-core:1.0-groovy-2.4'
+    )
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'tk.deftech.evalue.Main'
+    }
+}
